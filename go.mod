@@ -1,4 +1,4 @@
-module ipchecker
+module github.com/destan0098/ipchecker
 
 go 1.22.0
 
