@@ -53,6 +53,7 @@ COMMANDS:
 GLOBAL OPTIONS:
    --list value, -l value  Enter a list from a text file
    --pipe, -p              Enter just from a pipeline (default: false)
+   --ip ,-i                Enter just 1 ip 
    --help, -h              show help
 
 
