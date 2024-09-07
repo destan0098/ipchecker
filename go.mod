@@ -1,6 +1,6 @@
 module github.com/destan0098/ipchecker
 
-go 1.22.0
+go 1.22
 
 require (
 	github.com/TwiN/go-color v1.4.1 // indirect
