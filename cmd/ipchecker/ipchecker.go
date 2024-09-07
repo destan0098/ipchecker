@@ -28,6 +28,13 @@ func main() {
 				Aliases: []string{"l"},
 				Usage:   "Enter a list from a text file",
 			},
+
+			&cli.StringFlag{
+				Name:    "ip",
+				Value:   "",
+				Aliases: []string{"i"},
+				Usage:   "Enter a single ip",
+			},
 			&cli.BoolFlag{
 				Name:    "pipe",
 				Aliases: []string{"p"},
@@ -38,6 +45,8 @@ func main() {
 			start = time.Now()
 			if cCtx.String("list") != "" {
 				withList(cCtx.String("list"))
+			} else if cCtx.String("ip") != "" {
+				singleIP(cCtx.String("ip"))
 			} else if cCtx.Bool("pipe") {
 				withPipe()
 			}
@@ -93,7 +102,14 @@ func withList(inputFile string) {
 	}
 
 }
+func singleIP(inputIp string) {
 
+	if CheckHost(inputIp) {
+
+		fmt.Printf("%s\n", inputIp)
+	}
+
+}
 func CheckHost(ip string) bool {
 	// Check ICMP availability
 	if PingIP(ip) {
