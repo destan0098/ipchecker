@@ -20,6 +20,7 @@ var (
 )
 
 func main() {
+
 	app := &cli.App{
 		Flags: []cli.Flag{
 			&cli.StringFlag{
